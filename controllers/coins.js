@@ -11,8 +11,11 @@ function index(req, res) {
             title: 'Search Results',
             search: req.body.search ? req.body.search: null,
             data: response.data,
-
     })
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect('/coins')
     })
 }
 function search(req, res) {
@@ -27,11 +30,32 @@ function search(req, res) {
             
         })
     })
+    .catch(err => {
+        console.log(err)
+        res.redirect('/coins')
+    })
 }
 
+function show(req, res){
+    console.log('*******',req.params.id)
+    axios.get(`https://api.coingecko.com/api/v3/coins/${req.params.id}`)
+    .then(response => {
+        console.log(response.data)
+        console.log(req.params.id)
+        res.render('coins/show', {
+            data: response.data,
+            title: "Coin details"
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect('/')
+    })
+}
 
 
 export {
     index,
     search,
+    show,
 }

@@ -1,14 +1,15 @@
 import mongoose from 'mongoose'
 
-const coinsSchema = new mongoose.Schema({
-    id: String,
-    name: String,
-    symbol: String,
-    image: String,
-    marketcap: Number,
-}, {
-  timestamps: true
-})
+// const watchlistSchema = new mongoose.Schema({
+//     id: String,
+//     name: String,
+//     symbol: String,
+//     image: String,
+//     marketcap: Number,
+//     watchlist:[watchlistSchema]
+// }, {
+//   timestamps: true
+// })
 
 const profileSchema = new mongoose.Schema({
   name: String,

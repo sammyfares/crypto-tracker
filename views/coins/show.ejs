@@ -1,0 +1,22 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+
+<main>
+    
+    <div class="coin-container">
+        <h1><%= data.id %></h1>
+        <img src="<%= data.image.large %>" alt="">
+        <h1><%= data.name %> </h1>
+        <h1><%= data.pl %></h1>
+        <h1><%= data.market_cap_rank %></h1>
+        <h1><%= data.market_data.price_change_24h %></h1>
+        <h1><%= data.price_change_percentage_1h_in_currency %></h1>
+        <h1><%= data.categories[0] %></h1>
+        <h1><%= data.hashing_algorithm %></h1>
+        <h4><%= data.description.en %></h4>
+        
+        </div>
+</main>
+
+<%- include('../partials/footer') %>
