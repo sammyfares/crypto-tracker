@@ -4,6 +4,7 @@
 </head>
 <body>
   <nav>
+    <a href="/coin">Crypto coins</a>
     <% if (user) { %>
       <a href="/auth/logout">
         <button type="submit">Logout</button>
@@ -15,4 +16,7 @@
         </button>
       </a>
     <% } %>
+    <form action="/coins/search" method="POST">
+      <input type="text" name="search" placeholder="Search for" autocomplete="off">
+    </form>
   </nav>

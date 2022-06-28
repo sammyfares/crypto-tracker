@@ -1,0 +1,26 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/coin.css">
+<%- include('../partials/nav') %>
+
+
+<main>
+    <div class="coin-container">
+    <h1 class="search">Search Results</h1>
+    <% if (search) { %> 
+    <h2> You searched for <%= search %></h2>
+    <% } %>
+    <div class="row">
+    <% data.forEach(coinData => { %>
+        <h2><%= coinData.name %></h2>
+        <img src="<%= coinData.image %> " alt="">
+        <h2><%= coinData.symbol %></h2>
+        <h2><%= coinData.current_price %></h2>
+        <h2><%= coinData.market_cap %></h2>
+        <h2><%= coinData.market_cap_rank %></h2>
+   <% }) %>
+    </div>
+    </div>
+</main>
+
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,12 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<h1>ALL Crypto coins</h1>
+<ul>
+    <% coins.forEach(coin => { %>
+        <li><%= coin.name %> </li>
+    <% }) %>
+</ul>
+
+
+<%- include('../partials/footer') %>
