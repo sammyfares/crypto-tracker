@@ -4,21 +4,24 @@
 
 
 <main>
-    <div class="coin-container">
+    
     <h1 class="search">Search Results</h1>
     <% if (search) { %> 
     <h2> You searched for <%= search %></h2>
     <% } %>
-    <div class="row">
+    <div class="coin-container">
     <% data.forEach(coinData => { %>
-        <h2><%= coinData.name %></h2>
-        <img src="<%= coinData.image %> " alt="">
-        <h2><%= coinData.symbol %></h2>
-        <h2><%= coinData.current_price %></h2>
-        <h2><%= coinData.market_cap %></h2>
-        <h2><%= coinData.market_cap_rank %></h2>
+        <div class="row">
+        <div class="coin">
+            <h2 class="coin-name"><%= coinData.name %></h2>
+            <img src="<%= coinData.image %> " alt="">
+            <h2 class="coin-symbol"><%= coinData.symbol %></h2>
+            <h2 class="coin-price"><%= coinData.current_price %></h2>
+            <h2 class="market-cap"><%= coinData.market_cap %></h2>
+            <h2 class="market-cap-rank"><%= coinData.market_cap_rank %></h2>
+        </div>
+        </div>
    <% }) %>
-    </div>
     </div>
 </main>
 
