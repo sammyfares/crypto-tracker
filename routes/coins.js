@@ -14,8 +14,11 @@ router.post('/search', coinsCtrl.search)
 //get localhost:3000/coins/search/:id
 router.get('/:id', coinsCtrl.show)
 
-//POST localhost:3000
+
+//POST localhost:3000/coins
 router.post('/', coinsCtrl.create)
+
+
 
 export {
   router

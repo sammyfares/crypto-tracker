@@ -4,6 +4,7 @@ const watchlistSchema = new mongoose.Schema({
     id: String,
     name: String,
     // review: [reviewSchema],
+    
     coin: String,
 
     
@@ -14,7 +15,7 @@ const watchlistSchema = new mongoose.Schema({
 const profileSchema = new mongoose.Schema({
   name: String,
   avatar: String,
-  watchlist: [watchlistSchema]
+  coins: [{type: mongoose.Schema.Types.ObjectId, ref: "Coin"}]
 }, {
   timestamps: true
 })

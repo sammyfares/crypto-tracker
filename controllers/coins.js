@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { response } from 'express'
 import { Coin } from '../models/coin.js'
+import { Profile } from '../models/profile.js'
 
 
 function index(req, res) {
@@ -54,12 +54,17 @@ function show(req, res){
 }
 
 function create(req, res) {
-    console.log(req.user)
-    console.log(req.body)
-    req.body.owner = req.user.profile._id
-    Coin.create(req.body)
-    .then(coin => {
-        res.redirect('/coins')
+    Profile.findById(req.user.profile._id)
+    .then(profile => {
+        req.body.owner = req.user.profile._id
+        Coin.create(req.body)
+        .then(coin => {
+            profile.coins.push(coin._id)
+            profile.save()
+            .then(() => { 
+                res.redirect('/coins')
+            })
+        })
     })
     .catch(err => {
         console.log(err)

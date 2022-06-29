@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const coinSchema = new mongoose.Schema({
-    id: String,
+    apiId: String,
     name: String,
     symbol: String,
     image: String,

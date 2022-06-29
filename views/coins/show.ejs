@@ -22,9 +22,10 @@
             <% if(user) { %>
                 <h2>Add to watch list</h2>
                 <form action="/coins" method="POST">
-                    <label> 
-                        <input type="checkbox">
-                    </label>
+                    <input hidden name="apiId" value="<%= data.id %>" type="text">
+                    <input hidden name="name" value="<%= data.name %>" type="text">
+                    <input hidden name="image" value="<%= data.image.large %>" type="text">
+                    <input hidden name="marketcap" value="<%= data.market_cap_rank %>" type="text">
                     <button type="submit">Add Coin</button>
                 </form>
             <% } %> 
