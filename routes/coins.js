@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import * as coinsCtrl from "../controllers/coins.js"
+import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
@@ -13,6 +14,8 @@ router.post('/search', coinsCtrl.search)
 //get localhost:3000/coins/search/:id
 router.get('/:id', coinsCtrl.show)
 
+//POST localhost:3000
+router.post('/coins', coinsCtrl.create)
 
 export {
   router

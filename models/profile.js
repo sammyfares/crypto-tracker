@@ -14,6 +14,7 @@ const watchlistSchema = new mongoose.Schema({
 const profileSchema = new mongoose.Schema({
   name: String,
   avatar: String,
+  watchlist: [watchlistSchema]
 }, {
   timestamps: true
 })

@@ -53,9 +53,16 @@ function show(req, res){
     })
 }
 
+function create(req, res) {
+    console.log(req.user)
+    console.log(req.body)
+    req.body.owner = req.user.profile._id
+}
+
 
 export {
     index,
     search,
     show,
+    create,
 }

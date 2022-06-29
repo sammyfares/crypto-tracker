@@ -15,8 +15,20 @@
         <h1><%= data.categories[0] %></h1>
         <h1><%= data.hashing_algorithm %></h1>
         <h4><%= data.description.en %></h4>
-        
-        </div>
+    </div>
+
+        <section>
+            <h1>Add coin to watchlist</h1>
+            <% if(user) { %>
+                <h2>Add to watch list</h2>
+                <form action="/coins/show" method="POST">
+                    <label> 
+                        <input type="checkbox">
+                    </label>
+                    <button type="submit">Add Coin</button>
+                </form>
+            <% } %> 
+        </section>
 </main>
 
 <%- include('../partials/footer') %>
