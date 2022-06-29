@@ -57,6 +57,14 @@ function create(req, res) {
     console.log(req.user)
     console.log(req.body)
     req.body.owner = req.user.profile._id
+    Coin.create(req.body)
+    .then(coin => {
+        res.redirect('/coins')
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect('/coins')
+    })
 }
 
 
